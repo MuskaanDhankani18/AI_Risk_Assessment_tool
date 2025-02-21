@@ -1,0 +1,70 @@
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background: #343a40;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background: #17a2b8;
+    padding: 15px;
+}
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+    color: #343a40;
+}
+
+/* Charts */
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

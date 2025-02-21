@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Business</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script defer src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+            <a class="navbar-brand ms-3" href="#">Risk Assessment</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/dashboard">📊 Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reports">📑 Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/settings">⚙️ Settings</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <h2 class="text-center">Add Business</h2>
+        
+            <div class="card p-4 shadow-sm">
+                <form id="business-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Business Name:</label>
+                            <input type="text" id="business_name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="industry">Industry:</label>
+                            <select id="industry" name="industry" required>
+                                <option value="Finance">Finance</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Retail">Retail</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Revenue ($):</label>
+                            <input type="number" id="revenue" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Employees:</label>
+                            <input type="number" id="employees" class="form-control" required>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Location:</label>
+                            <input type="text" id="location" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Financial Stability (1-10):</label>
+                            <input type="number" id="financial_stability" class="form-control" min="1" max="10" required>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Market Risk (1-10):</label>
+                            <input type="number" id="market_risk" class="form-control" min="1" max="10" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Operational Risk (1-10):</label>
+                            <input type="number" id="operational_risk" class="form-control" min="1" max="10" required>
+                        </div>
+                    </div>
+        
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Cybersecurity Risk (1-10):</label>
+                            <input type="number" id="cybersecurity_risk" class="form-control" min="1" max="10" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Compliance Risk (1-10):</label>
+                            <input type="number" id="compliance_risk" class="form-control" min="1" max="10" required>
+                        </div>
+                    </div>
+        
+                    <div class="mt-3">
+                        <label class="form-label">Description:</label>
+                        <textarea id="description" class="form-control" required></textarea>
+                    </div>
+        
+                    <button type="submit" class="btn btn-primary w-100 mt-4">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
